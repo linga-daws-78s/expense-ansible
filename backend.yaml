@@ -18,7 +18,7 @@
     loop:
     - nodejs
     - mysql
-    
+
 - name: create expense user
   ansible.builtin.user:
     name: expense
@@ -39,13 +39,10 @@
     dest: /app
     remote_Src: yes
 
-
-
 - name: install npm dependencies
   ansible.builtin.command: npm install
-    args:
-      chdir: /app 
-
+  args:
+    chdir: /app 
 
 - name: copy backend service
   ansible.builtin.copy: 
